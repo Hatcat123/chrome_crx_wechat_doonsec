@@ -1,0 +1,45 @@
+﻿{
+	"manifest_version": 2,
+	"name": "Doonsec贡献公众号",
+	"version": "1.0.3",
+	"description": "洞见微信方便添加公众号的插件",
+	"icons": {
+		"16": "img/icon.png",
+		"48": "img/icon.png",
+		"128": "img/icon.png"
+	},
+	"page_action": {
+		"default_icon": "img/icon.png",
+		"default_title": "洞见微信聚合",
+		"default_popup": "popup/popup.html"
+	},
+	"background": {
+		"page": "background.html"
+	},
+	"content_scripts": [
+		{
+			"matches": [
+				"<all_urls>"
+			],
+			"css": [
+				"content_script.css"
+			],
+			"js": [
+				"js/jquery-1.8.3.js",
+				"content_script.js"
+			]
+		}
+	],
+	"permissions": [
+		"contextMenus",
+		"tabs",
+		"storage",
+		"activeTab",
+		"declarativeContent",
+		"notifications",
+		"http://wechat.doonsec.com:7001/api/v1/community_account_add/",
+		"http://127.0.0.1:8000/api/v1/account_tongji/",
+		"http://wechat.doonsec.com:7001/api/v1/account_tongji/"
+	],
+	"content_security_policy": "script-src 'self'; object-src 'self'; img-src 'self'; "
+}
