@@ -21,7 +21,7 @@ $(function () {
                 pattern = '__biz=(.*?)=='
                 biz = response.match(pattern)[1]
                 zlajax.get({
-                    "url": "http://wechat.doonsec.com:7001/api/v1/account_tongji/?biz="+biz ,
+                    "url": "http://wechat.doonsec.com/api/v1/account_tongji/?biz="+biz ,
                     // "dataType": "jsonp",
                     "success": function (data) {
                         if (data.code == 0) {
@@ -57,7 +57,7 @@ $(function () {
                 if (response) {
                     response['tag_name'] = 13;
                     zlajax.post({
-                        "url": "http://wechat.doonsec.com:7001/api/v1/community_account_add/",
+                        "url": "http://wechat.doonsec.com/api/v1/community_account_add/",
                         // "dataType":"jsonp",
                         "data": response,
                         "success": function (data) {

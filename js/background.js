@@ -48,7 +48,7 @@ function sendmsg_acount(tag_name) {
 			if (response) {
 				response['tag_name'] = tag_name;
 				zlajax.post({
-					"url": "http://wechat.doonsec.com:7001/api/v1/community_account_add/",
+					"url": "http://wechat.doonsec.com/api/v1/community_account_add/",
 					// "dataType":"jsonp",
 					"data": response,
 					"success": function (data) {
