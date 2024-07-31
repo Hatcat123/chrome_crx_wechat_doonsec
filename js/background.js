@@ -36,7 +36,7 @@ chrome.contextMenus.create({
 	onclick: function(params)
 	{
 		// 注意不能使用location.href，因为location是属于background的window对象
-		chrome.tabs.create({url: 'http://wechat.doonsec.com/elasticsearch/?keyword=' + encodeURI(params.selectionText)});
+		chrome.tabs.create({url: 'https://wechat.doonsec.com/elasticsearch/?keyword=' + encodeURI(params.selectionText)});
 	}
 });
 
@@ -48,7 +48,7 @@ function sendmsg_acount(tag_name) {
 			if (response) {
 				response['tag_name'] = tag_name;
 				zlajax.post({
-					"url": "http://wechat.doonsec.com/api/v1/community_account_add/",
+					"url": "https://wechat.doonsec.com/api/v1/community_account_add/",
 					// "dataType":"jsonp",
 					"data": response,
 					"success": function (data) {
